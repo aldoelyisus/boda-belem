@@ -1,0 +1,9 @@
+# Cloudflare Pages: sitio en public/, funciones en functions/, base de datos D1.
+name = "boda-belem"
+pages_build_output_dir = "public"
+compatibility_date = "2026-11-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "boda-belem"
+database_id = "d8a48d1f-13c1-473f-a517-5e1f34bef6dd"

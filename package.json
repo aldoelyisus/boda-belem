@@ -1,0 +1,9 @@
+{
+  "name": "boda-belem",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx wrangler@4 pages dev",
+    "deploy": "npx wrangler@4 pages deploy"
+  }
+}

@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Invitados · Boda Belém & Rubén</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#F4ECDF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Pinyon+Script&display=swap">
+<style>
+:root{
+  --papel:#F4ECDF;--papel-2:#EBDFCB;--crema:#FBF7F0;--blanco:#fff;
+  --rosa:#A9875E;--rosa-lo:#7A5B3B;--oro:#A9875E;--oro-lo:#7A5B3B;
+  --tinta:#43352A;--tinta-2:#6B5A48;
+  --verde:#2F6B4F;--verde-bg:#E3F0E8;
+  --rojo:#9B1C2E;--rojo-bg:#F8E1E3;
+  --gris-bg:#EBE3D6;
+  --linea:rgba(67,53,42,.14);
+  --f-display:"Cormorant Garamond","Georgia",serif;
+  --f-caps:"Cinzel","Georgia",serif;
+  --f-cuento:"Pinyon Script","Cormorant Garamond",cursive;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--papel);color:var(--tinta);font-family:var(--f-display);
+  font-size:1.12rem;font-weight:500;line-height:1.5;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(169,135,94,.3)}
+:focus-visible{outline:2px solid var(--rosa-lo);outline-offset:2px;border-radius:4px}
+input,button,select{font:inherit;color:inherit}
+[hidden]{display:none!important}
+.caps{font-family:var(--f-caps);text-transform:uppercase;letter-spacing:.16em;font-size:.7rem}
+h1,h2{margin:0;font-weight:400}
+
+/* ===== Botones ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;min-height:44px;
+  padding:.6rem 1.1rem;border-radius:999px;border:1px solid var(--rosa-lo);background:transparent;
+  color:var(--rosa-lo);cursor:pointer;font-family:var(--f-caps);text-transform:uppercase;
+  letter-spacing:.14em;font-size:.7rem;text-decoration:none;white-space:nowrap;
+  transition:background .2s,color .2s,opacity .2s}
+.btn:hover{background:var(--rosa-lo);color:var(--crema)}
+.btn.lleno{background:var(--rosa-lo);color:var(--crema)}
+.btn.lleno:hover{background:var(--tinta);border-color:var(--tinta)}
+.btn:disabled{opacity:.5;cursor:progress}
+.btn svg,.ib svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.ib{width:40px;height:40px;display:inline-grid;place-items:center;border-radius:50%;border:1px solid transparent;
+  background:transparent;color:var(--tinta-2);cursor:pointer;transition:background .2s,color .2s}
+.ib:hover{background:var(--papel-2);color:var(--rosa-lo)}
+.ib.peligro:hover{background:var(--rojo-bg);color:var(--rojo)}
+
+/* ===== Campos ===== */
+.campo{display:flex;flex-direction:column;gap:.35rem}
+.campo label{font-family:var(--f-caps);text-transform:uppercase;letter-spacing:.14em;font-size:.7rem;color:var(--tinta-2)}
+input[type=text],input[type=password],input[type=number],input[type=search],select{
+  min-height:46px;padding:.55rem .9rem;border-radius:10px;border:1px solid var(--linea);
+  background:var(--blanco);font-size:1rem;width:100%;caret-color:var(--rosa-lo)}
+input:focus,select:focus{outline:2px solid var(--rosa-lo);outline-offset:0;border-color:transparent}
+input::placeholder{color:#8F7D69}
+.error{color:var(--rojo);font-size:.92rem;min-height:1.3em}
+
+/* ===== Login ===== */
+#login{min-height:100svh;display:grid;place-items:center;padding:24px}
+#login form{width:100%;max-width:22rem;display:flex;flex-direction:column;gap:1rem;text-align:center}
+#login h1{font-family:var(--f-cuento);color:var(--rosa-lo);font-size:2.6rem;line-height:1.1}
+#login p{color:var(--tinta-2);margin-bottom:.6rem}
+#login .campo{text-align:left}
+
+/* ===== Panel ===== */
+header.barra{display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:14px clamp(16px,4vw,32px);border-bottom:1px solid var(--linea);background:var(--papel)}
+header.barra h1{font-family:var(--f-cuento);color:var(--rosa-lo);font-size:1.7rem;line-height:1}
+header.barra h1 small{display:block;font-family:var(--f-caps);color:var(--tinta-2);font-size:.7rem;
+  letter-spacing:.16em;text-transform:uppercase;margin-top:.35rem}
+.envoltura{max-width:62rem;margin:0 auto;padding:clamp(16px,4vw,32px);display:flex;flex-direction:column;gap:1.6rem}
+
+/* Resumen: una línea de cifras, no tarjetas */
+.resumen{display:flex;flex-wrap:wrap;gap:.4rem 1.8rem;padding:1rem 0;border-block:1px solid var(--linea)}
+.resumen div{display:flex;align-items:baseline;gap:.45rem}
+.resumen b{font-family:var(--f-display);font-weight:500;font-size:1.7rem;line-height:1;font-variant-numeric:tabular-nums}
+.resumen span{color:var(--tinta-2);font-size:.92rem}
+.resumen .si b{color:var(--verde)}
+.resumen .no b{color:var(--rojo)}
+
+/* Alta */
+.alta{display:grid;grid-template-columns:1fr;gap:.8rem;align-items:end;padding:1.1rem;
+  background:var(--crema);border:1px solid var(--linea);border-radius:14px}
+.alta h2{font-family:var(--f-caps);text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;color:var(--tinta-2)}
+.num{display:flex;align-items:center;gap:.4rem}
+.num input{text-align:center;width:4.5rem;font-variant-numeric:tabular-nums}
+.num button{width:46px;height:46px;flex:none;border-radius:10px;border:1px solid var(--linea);background:var(--blanco);
+  cursor:pointer;display:grid;place-items:center;color:var(--rosa-lo)}
+.num button:hover{border-color:var(--rosa-lo)}
+.num svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
+@media (min-width:720px){
+  .alta{grid-template-columns:1fr auto auto}
+  .alta h2,.alta .error{grid-column:1/-1}
+}
+
+/* Filtros */
+.filtros{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
+.filtros input{flex:1 1 14rem}
+.pestanas{display:flex;gap:.3rem;flex-wrap:wrap}
+.pestanas button{min-height:40px;padding:.4rem .9rem;border-radius:999px;border:1px solid var(--linea);
+  background:transparent;cursor:pointer;font-size:.9rem;color:var(--tinta-2)}
+.pestanas button[aria-pressed=true]{background:var(--tinta);border-color:var(--tinta);color:var(--crema)}
+
+/* Lista */
+.lista{list-style:none;margin:0;padding:0;border-top:1px solid var(--linea)}
+.fila{display:grid;grid-template-columns:1fr;gap:.3rem .8rem;padding:.9rem .2rem;border-bottom:1px solid var(--linea);align-items:center}
+.fila .nombre{font-size:1.08rem;font-weight:500;overflow-wrap:anywhere}
+.fila .meta{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem .7rem;color:var(--tinta-2);font-size:.9rem}
+.fila .acciones{display:flex;gap:.1rem;align-items:center;margin-left:-10px}
+.alta .error:empty{display:none}
+.fila .msg{grid-column:1/-1;font-style:italic;color:var(--tinta-2);font-size:.92rem;
+  padding:.5rem .8rem;background:var(--crema);border-radius:8px}
+.chip{display:inline-flex;align-items:center;gap:.35rem;padding:.12rem .6rem;border-radius:999px;font-size:.8rem;font-weight:500}
+.chip::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.chip.si{background:var(--verde-bg);color:var(--verde)}
+.chip.no{background:var(--rojo-bg);color:var(--rojo)}
+.chip.pendiente{background:var(--gris-bg);color:var(--tinta-2)}
+.codigo{font-variant-numeric:tabular-nums;letter-spacing:.04em}
+.vacio{padding:2.4rem 1rem;text-align:center;color:var(--tinta-2)}
+.vacio b{display:block;font-family:var(--f-cuento);color:var(--rosa-lo);font-weight:400;font-size:1.6rem;margin-bottom:.3rem}
+@media (min-width:720px){
+  .fila{grid-template-columns:minmax(0,1fr) auto}
+  .fila .acciones{grid-column:2;grid-row:1/3;margin-left:0}
+}
+
+/* Edición */
+dialog{border:0;border-radius:16px;padding:0;width:min(26rem,calc(100% - 32px));background:var(--crema);color:var(--tinta);
+  box-shadow:0 20px 60px rgba(67,53,42,.3)}
+dialog::backdrop{background:rgba(67,53,42,.45)}
+dialog form{display:flex;flex-direction:column;gap:1rem;padding:1.4rem}
+dialog h2{font-family:var(--f-cuento);color:var(--rosa-lo);font-size:1.6rem}
+.fila2{display:flex;gap:.8rem;flex-wrap:wrap}
+.fila2>*{flex:1 1 9rem}
+.pie{display:flex;justify-content:flex-end;gap:.6rem;flex-wrap:wrap}
+
+/* Aviso flotante */
+#toast{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);
+  background:var(--tinta);color:var(--crema);padding:.7rem 1.2rem;border-radius:999px;font-size:.95rem;
+  opacity:0;pointer-events:none;transition:opacity .25s,transform .3s cubic-bezier(.16,1,.3,1);z-index:10;
+  max-width:calc(100% - 32px);text-align:center}
+#toast.ver{opacity:1;transform:translate(-50%,0)}
+</style>
+</head>
+<body>
+
+<!-- ===================== LOGIN ===================== -->
+<main id="login">
+  <form id="f-login">
+    <h1>Belém &amp; Rubén</h1>
+    <p>Lista de invitados de la boda</p>
+    <div class="campo"><label for="u">Usuario</label><input id="u" type="text" autocomplete="username" autocapitalize="none" required></div>
+    <div class="campo"><label for="p">Contraseña</label><input id="p" type="password" autocomplete="current-password" required></div>
+    <button class="btn lleno" type="submit">Entrar</button>
+    <p class="error" id="e-login" role="alert"></p>
+  </form>
+</main>
+
+<!-- ===================== PANEL ===================== -->
+<div id="panel" hidden>
+  <header class="barra">
+    <h1>Belém &amp; Rubén<small>Invitados · Boda</small></h1>
+    <div style="display:flex;gap:.4rem">
+      <button class="btn" id="csv" type="button" title="Descargar la lista en Excel (CSV)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Descargar
+      </button>
+      <button class="btn" id="salir" type="button">Salir</button>
+    </div>
+  </header>
+
+  <div class="envoltura">
+    <div class="resumen" id="resumen" aria-live="polite"></div>
+
+    <form class="alta" id="f-alta" autocomplete="off">
+      <h2>Agregar invitado</h2>
+      <div class="campo">
+        <label for="a-nombre">Nombre del invitado o familia</label>
+        <input id="a-nombre" type="text" placeholder="Ej. Familia López Herrera" required>
+      </div>
+      <div class="campo">
+        <label for="a-acomp">Acompañantes</label>
+        <div class="num">
+          <button type="button" data-paso="-1" aria-label="Un acompañante menos"><svg viewBox="0 0 24 24"><path d="M6 12h12"/></svg></button>
+          <input id="a-acomp" type="number" min="0" max="20" value="0" inputmode="numeric">
+          <button type="button" data-paso="1" aria-label="Un acompañante más"><svg viewBox="0 0 24 24"><path d="M6 12h12M12 6v12"/></svg></button>
+        </div>
+      </div>
+      <button class="btn lleno" type="submit" id="a-btn" style="min-height:46px">Agregar</button>
+      <p class="error" id="e-alta" role="alert"></p>
+    </form>
+
+    <div class="filtros">
+      <input type="search" id="buscar" placeholder="Buscar por nombre" aria-label="Buscar invitado">
+      <div class="pestanas" id="pestanas">
+        <button type="button" data-f="todos" aria-pressed="true">Todos</button>
+        <button type="button" data-f="si" aria-pressed="false">Asisten</button>
+        <button type="button" data-f="no" aria-pressed="false">No asisten</button>
+        <button type="button" data-f="pendiente" aria-pressed="false">Sin responder</button>
+      </div>
+    </div>
+
+    <ul class="lista" id="lista"></ul>
+  </div>
+</div>
+
+<dialog id="d-edit">
+  <form id="f-edit" method="dialog">
+    <h2>Editar invitado</h2>
+    <div class="campo"><label for="e-nombre">Nombre</label><input id="e-nombre" type="text" required></div>
+    <div class="fila2">
+      <div class="campo"><label for="e-acomp">Acompañantes</label><input id="e-acomp" type="number" min="0" max="20" inputmode="numeric"></div>
+      <div class="campo"><label for="e-estado">Respuesta</label>
+        <select id="e-estado"><option value="pendiente">Sin responder</option><option value="si">Asiste</option><option value="no">No asiste</option></select>
+      </div>
+    </div>
+    <div class="campo" id="e-asis-c"><label for="e-asis">Personas que asisten</label><input id="e-asis" type="number" min="1" inputmode="numeric"></div>
+    <p class="error" id="e-edit" role="alert"></p>
+    <div class="pie">
+      <button class="btn" type="button" id="e-cancelar">Cancelar</button>
+      <button class="btn lleno" type="submit" value="ok">Guardar</button>
+    </div>
+  </form>
+</dialog>
+
+<div id="toast" role="status"></div>
+
+<script>
+(() => {
+  const $ = s => document.querySelector(s);
+  const LLAVE = "belem-admin";
+  let auth = (() => { try { return localStorage.getItem(LLAVE); } catch { return null; } })();
+  let invitados = [], filtro = "todos";
+
+  const enlace = inv => location.origin + "/i/" + inv.id;
+  const mensajeWa = inv => "¡Hola, " + inv.nombre + "! Belém y Rubén nos casamos el viernes 18 de diciembre de 2026 y queremos que nos acompañes. " +
+    (inv.pases === 1 ? "Reservamos un lugar para ti." : "Reservamos " + inv.pases + " lugares para ti.") +
+    " Aquí está tu invitación, confírmanos tu asistencia: " + enlace(inv);
+  const toast = t => { const el = $("#toast"); el.textContent = t; el.classList.add("ver"); clearTimeout(el._t); el._t = setTimeout(() => el.classList.remove("ver"), 2200); };
+
+  async function api(metodo, cuerpo, query = ""){
+    const r = await fetch("/api/admin" + query, {
+      method: metodo,
+      headers: { "Authorization": "Basic " + auth, "Content-Type": "application/json" },
+      body: cuerpo ? JSON.stringify(cuerpo) : undefined
+    });
+    if (r.status === 204) return null;
+    const j = await r.json().catch(() => ({}));
+    if (r.status === 401){ salir(); throw new Error(j.error || "Sesión vencida."); }
+    if (!r.ok) throw new Error(j.error || "Algo salió mal.");
+    return j;
+  }
+
+  /* ===== Login ===== */
+  $("#f-login").addEventListener("submit", async e => {
+    e.preventDefault();
+    auth = btoa(unescape(encodeURIComponent($("#u").value.trim() + ":" + $("#p").value)));
+    $("#e-login").textContent = "";
+    try {
+      invitados = await api("GET");
+      try { localStorage.setItem(LLAVE, auth); } catch {}
+      entrar();
+    } catch (err) { $("#e-login").textContent = err.message; }
+  });
+  function entrar(){ $("#login").hidden = true; $("#panel").hidden = false; pintar(); }
+  function salir(){
+    auth = null; try { localStorage.removeItem(LLAVE); } catch {}
+    $("#panel").hidden = true; $("#login").hidden = false; $("#p").value = "";
+  }
+  $("#salir").onclick = salir;
+
+  /* ===== Resumen y lista ===== */
+  function pintar(){
+    const lugares = invitados.reduce((s, i) => s + i.pases, 0);
+    const si = invitados.filter(i => i.estado === "si");
+    const no = invitados.filter(i => i.estado === "no");
+    const pend = invitados.filter(i => i.estado === "pendiente");
+    const asisten = si.reduce((s, i) => s + i.asistentes, 0);
+    const lugaresPend = pend.reduce((s, i) => s + i.pases, 0);
+    const bajas = si.reduce((s, i) => s + (i.pases - i.asistentes), 0) + no.reduce((s, i) => s + i.pases, 0);
+    $("#resumen").innerHTML = `
+      <div><b>${invitados.length}</b><span>invitaciones</span></div>
+      <div><b>${lugares}</b><span>lugares reservados</span></div>
+      <div class="si"><b>${asisten}</b><span>personas confirmadas</span></div>
+      <div class="no"><b>${bajas}</b><span>lugares liberados</span></div>
+      <div><b>${lugaresPend}</b><span>lugares sin responder</span></div>`;
+
+    const q = $("#buscar").value.trim().toLowerCase();
+    const sinAcento = s => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+    const vis = invitados.filter(i => (filtro === "todos" || i.estado === filtro) && (!q || sinAcento(i.nombre).includes(sinAcento(q))));
+    const ul = $("#lista");
+    ul.innerHTML = "";
+    if (!invitados.length){
+      ul.innerHTML = `<li class="vacio"><b>Aún no hay invitados</b>Agrega el primero arriba. Su enlace se copia solo al agregarlo.</li>`;
+      return;
+    }
+    if (!vis.length){ ul.innerHTML = `<li class="vacio">Nadie coincide con ese filtro.</li>`; return; }
+
+    for (const inv of vis){
+      const li = document.createElement("li");
+      li.className = "fila";
+      const estado = inv.estado === "si"
+        ? `<span class="chip si">Asiste ${inv.asistentes} de ${inv.pases}</span>`
+        : inv.estado === "no" ? `<span class="chip no">No asiste</span>`
+        : `<span class="chip pendiente">Sin responder</span>`;
+      li.innerHTML = `
+        <span class="nombre"></span>
+        <span class="meta">${estado}<span>${inv.pases === 1 ? "1 lugar" : inv.pases + " lugares"}</span><span class="codigo">/i/${inv.id}</span></span>
+        <span class="acciones">
+          <a class="ib" data-a="wa" title="Enviar por WhatsApp" aria-label="Enviar por WhatsApp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.8z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1.2-1.3-1.8-1-1 .8a4 4 0 0 1-2.4-2.4l.8-1-1-1.8z"/></svg></a>
+          <button class="ib" data-a="copiar" title="Copiar enlace" aria-label="Copiar enlace"><svg viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button>
+          <a class="ib" data-a="ver" title="Ver invitación" aria-label="Ver invitación" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></a>
+          <button class="ib" data-a="editar" title="Editar" aria-label="Editar"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></svg></button>
+          <button class="ib peligro" data-a="borrar" title="Borrar" aria-label="Borrar"><svg viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></svg></button>
+        </span>`;
+      li.querySelector(".nombre").textContent = inv.nombre;
+      if (inv.mensaje){
+        const m = document.createElement("p"); m.className = "msg"; m.textContent = "“" + inv.mensaje + "”"; li.append(m);
+      }
+      li.querySelector('[data-a=ver]').href = enlace(inv);
+      li.querySelector('[data-a=wa]').href = "https://wa.me/?text=" + encodeURIComponent(mensajeWa(inv));
+      li.dataset.id = inv.id;
+      ul.append(li);
+    }
+  }
+
+  $("#buscar").addEventListener("input", pintar);
+  $("#pestanas").addEventListener("click", e => {
+    const b = e.target.closest("button"); if (!b) return;
+    filtro = b.dataset.f;
+    $("#pestanas").querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+    pintar();
+  });
+
+  /* ===== Alta ===== */
+  document.querySelectorAll(".num button").forEach(b => b.onclick = () => {
+    const i = $("#a-acomp"); i.value = Math.max(0, Math.min(20, (+i.value || 0) + +b.dataset.paso));
+  });
+  $("#f-alta").addEventListener("submit", async e => {
+    e.preventDefault();
+    const nombre = $("#a-nombre").value.trim();
+    if (!nombre){ $("#e-alta").textContent = "Escribe el nombre del invitado."; $("#a-nombre").focus(); return; }
+    const btn = $("#a-btn"); btn.disabled = true; $("#e-alta").textContent = "";
+    try {
+      const inv = await api("POST", { nombre, acompanantes: +$("#a-acomp").value || 0 });
+      invitados.unshift(inv);
+      $("#a-nombre").value = ""; $("#a-acomp").value = 0; $("#a-nombre").focus();
+      pintar();
+      copiar(enlace(inv), "Agregado. Enlace copiado: /i/" + inv.id, "Agregado: /i/" + inv.id);
+    } catch (err) { $("#e-alta").textContent = err.message; }
+    finally { btn.disabled = false; }
+  });
+
+  // sinCopia: aviso a mostrar si el navegador no deja copiar (sin abrir ventana)
+  async function copiar(t, aviso, sinCopia){
+    try { await navigator.clipboard.writeText(t); toast(aviso || "Enlace copiado"); }
+    catch { sinCopia ? toast(sinCopia) : prompt("Copia el enlace:", t); }
+  }
+
+  /* ===== Acciones de fila ===== */
+  const dlg = $("#d-edit");
+  let editando = null;
+  $("#lista").addEventListener("click", async e => {
+    const b = e.target.closest("[data-a]"); if (!b) return;
+    const inv = invitados.find(i => i.id === b.closest(".fila").dataset.id);
+    const a = b.dataset.a;
+    if (a === "copiar") copiar(enlace(inv));
+    if (a === "editar"){
+      editando = inv;
+      $("#e-nombre").value = inv.nombre; $("#e-acomp").value = inv.pases - 1;
+      $("#e-estado").value = inv.estado; $("#e-asis").value = inv.asistentes || inv.pases;
+      $("#e-asis-c").hidden = inv.estado !== "si"; $("#e-edit").textContent = "";
+      dlg.showModal();
+    }
+    if (a === "borrar"){
+      if (!confirm(`¿Borrar a "${inv.nombre}"? Su enlace dejará de funcionar.`)) return;
+      try { await api("DELETE", null, "?id=" + inv.id); invitados = invitados.filter(i => i !== inv); pintar(); toast("Invitado borrado"); }
+      catch (err) { toast(err.message); }
+    }
+  });
+  $("#e-estado").onchange = () => { $("#e-asis-c").hidden = $("#e-estado").value !== "si"; };
+  $("#e-cancelar").onclick = () => dlg.close();
+  $("#f-edit").addEventListener("submit", async e => {
+    e.preventDefault();
+    try {
+      const nuevo = await api("PUT", {
+        id: editando.id, nombre: $("#e-nombre").value, acompanantes: +$("#e-acomp").value || 0,
+        estado: $("#e-estado").value, asistentes: +$("#e-asis").value
+      });
+      Object.assign(editando, nuevo); dlg.close(); pintar(); toast("Cambios guardados");
+    } catch (err) { $("#e-edit").textContent = err.message; }
+  });
+
+  /* ===== CSV para Excel ===== */
+  $("#csv").onclick = () => {
+    const txt = { si: "Asiste", no: "No asiste", pendiente: "Sin responder" };
+    const filas = [["Nombre","Lugares","Respuesta","Asisten","Mensaje","Enlace"]]
+      .concat(invitados.map(i => [i.nombre, i.pases, txt[i.estado], i.asistentes, i.mensaje || "", enlace(i)]));
+    const csv = "﻿" + filas.map(f => f.map(v => '"' + String(v).replace(/"/g, '""') + '"').join(",")).join("\r\n");
+    const a = Object.assign(document.createElement("a"), { href: URL.createObjectURL(new Blob([csv], { type: "text/csv" })), download: "invitados-boda-belem-ruben.csv" });
+    a.click(); URL.revokeObjectURL(a.href);
+  };
+
+  /* ===== Sesión guardada ===== */
+  if (auth){
+    api("GET").then(l => { invitados = l; entrar(); }).catch(() => {});
+  }
+})();
+</script>
+</body>
+</html>
