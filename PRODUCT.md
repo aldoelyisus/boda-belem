@@ -27,7 +27,7 @@ Invitación digital a la boda de **Belém y Rubén**, estilo vaquero formal, con
 
 **Padrinos:** velación, Alba Elena Reyes Martel y Manuel Soto Hernández. Anillos, Zulma Sifuentes De la Rosa y Sergio Germán Ortiz Muñoz. Arras, Leticia Enríquez García y Manuel García Rodríguez. Mancuernas, Celina Zoraida Reyes Martínez y Ricardo Rodríguez Rodarte.
 
-**Vestimenta:** vaquero formal. Colores no permitidos: blanco, gris, marrón y chedrón (rojo ladrillo, según la muestra que mandó la novia).
+**Vestimenta:** vaquero formal. Colores no permitidos: blanco, chedrón (rojo ladrillo, según la muestra de la novia), marrón y beige.
 
 **Colores:** crema y beige tirando a café claro, nunca café intenso de fondo (pedido de la novia, por las invitaciones que le gustaron). Detalles de cultura vaquera: soga, herradura, espuela, remaches, sombrero y bota.
 
